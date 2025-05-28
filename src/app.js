@@ -10,6 +10,8 @@ import rutasCompras from './routes/compras.routes.js';
 import rutasDetallesVentas from './routes/detalles_ventas.routes.js';
 import rutasDetallesCompras from'./routes/detalles_compras.routes.js';
 import rutasEstadisticas from './routes/estadisticas.routes.js';
+import rutasIA from './routes/ia.routes.js';
+
 const app = express();
 
 // Habilitar CORS para cualquier origen
@@ -31,7 +33,7 @@ app.use('/api', rutasDetallesVentas);
 app.use('/api', rutasDetallesCompras);
 app.use(express.json({ limit: '10mb' })); // Aumenta a 10 MB
 app.use(express.urlencoded({ limit: '10mb', extended: true }));
-
+app.use('/ia', rutasIA);
 app.use('/api', rutasEstadisticas);
 
 // Manejo de rutas no encontradas
